@@ -13,17 +13,17 @@ pipeline {
         }
         stage('Install-dependencies') {
             steps {
-                sh "installations.sh"
+                sh 'bash installations.sh'
             }
         }
         stage('Test') {
             steps {
-                sh "python3 -m pytest --cov=application --junitxml=junit.xml --cov-report=xml"
+                sh 'python3 -m pytest --cov=application --junitxml=junit.xml --cov-report=xml'
             }
         }
         stage('Deploy') {
             steps {
-                sh "deeployment.sh"
+                sh 'deeployment.sh'
             }
         }
     }
