@@ -7,13 +7,13 @@ pipeline {
     stages {
         stage('make scripts executable') {
             steps {
-                sh 'chmod +x ./installations.sh'
-                sh 'chmod +x ./deeployment.sh'
+                sh 'chmod +x installations.sh'
+                sh 'chmod +x deeployment.sh'
             }
         }
         stage('Install-dependencies') {
             steps {
-                sh "./installations.sh"
+                sh "installations.sh"
             }
         }
         stage('Test') {
@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "./deeployment.sh"
+                sh "deeployment.sh"
             }
         }
     }
