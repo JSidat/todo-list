@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DATABASE_URL = credentials("DATABASE_URI")
+        DATABASE_URI = credentials("DATABASE_URI")
         SECRET_KEY = credentials("SECRET_KEY")
     }
     stages {
