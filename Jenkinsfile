@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environement {
+        DATABASE_URL = credentials("DATABASE_URI")
+        SECRET_KEY = credentials("SECRET_KEY")
+    }
     stages {
         stage('Install-dependencies') {
             steps {
