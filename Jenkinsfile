@@ -19,7 +19,7 @@ pipeline {
         stage('Test') {
             steps {
               
-                sh 'source venv/bin/activate && python3 -m pytest --cov=application --junitxml=junit.xml --cov-report=xml'
+                sh 'bash "source venv/bin/activate" && python3 -m pytest --cov=application --junitxml=junit.xml --cov-report=xml'
             }
         }
         stage('Deploy') {
