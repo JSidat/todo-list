@@ -8,7 +8,7 @@ pipeline {
         stage('make scripts executable') {
             steps {
                 sh chmod +x ./installations.sh
-                sh chmod +x ./deployment.sh
+                sh chmod +x ./deeployment.sh
             }
         }
         stage('Install-dependencies') {
