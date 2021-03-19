@@ -5,6 +5,12 @@ pipeline {
         SECRET_KEY = credentials("SECRET_KEY")
     }
     stages {
+        stage('make scripts executable') {
+            steps {
+                sh chmod +x ./installations.sh
+                sh chmod +x ./deployment.sh
+            }
+        }
         stage('Install-dependencies') {
             steps {
                 sh "./installations.sh"
