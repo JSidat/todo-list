@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'python3 -m pytest --cov=application --junitxml=junit.xml --cov-report=xml'
+                sh 'bash python3 -m pytest --cov=application --junitxml=junit.xml --cov-report=xml'
             }
         }
         stage('Deploy') {
